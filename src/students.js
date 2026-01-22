@@ -11,8 +11,17 @@ function showStudents() {
     students.forEach(s => console.log("-", s));
 }
 
+<<<<<<< HEAD
 function addStudent(name) {
     fs.appendFileSync("./src/data.txt",  "\n" + name);
 }
 
 module.exports = { showStudents, addStudent };
+=======
+function removeStudent(name) {
+    const students = loadStudents().filter(s => s.trim() !== name);
+    fs.writeFileSync("./src/data.txt", students.join("\n") + "\n");
+}
+
+module.exports = { showStudents, removeStudent };
+>>>>>>> feat/remove-student

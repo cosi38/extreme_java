@@ -1,6 +1,4 @@
-const { showStudents, addStudent } = require('./src/students');
+const { showStudents } = require('./src/students');
 
 
-showStudents();
-addStudent('Marc');
 showStudents();

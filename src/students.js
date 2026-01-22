@@ -12,5 +12,9 @@ function showStudents() {
     students.forEach(s => console.log("-", s));
 }
 
+function removeStudent(name) {
+    const students = loadStudents().filter(s => s.trim() !== name);
+    fs.writeFileSync("./src/data.txt", students.join("\n") + "\n");
+}
 
-module.exports = { showStudents };
+module.exports = { showStudents, removeStudent };
